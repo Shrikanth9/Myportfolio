@@ -111,21 +111,23 @@ export function SkillsSection() {
                   <h3 className="text-lg font-bold">{category.title}</h3>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {category.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="flex items-center justify-between gap-2"
-                    >
-                      <span className="text-sm text-foreground">
-                        {skill.name}
-                      </span>
-                      <Badge
-                        className={`text-xs ${getLevelColor(skill.level)}`}
-                        variant="secondary"
-                      >
-                        {skill.level}
-                      </Badge>
+                    <div key={skill.name} className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-foreground font-medium">
+                          {skill.name}
+                        </span>
+                        <span className="text-xs text-muted-foreground">
+                          {getLevelPercentage(skill.level)}%
+                        </span>
+                      </div>
+                      <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+                        <div
+                          className={`h-full ${getLevelColor(skill.level)} transition-all duration-500 rounded-full`}
+                          style={{ width: `${getLevelPercentage(skill.level)}%` }}
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
