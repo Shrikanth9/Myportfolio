@@ -59,16 +59,29 @@ const skillCategories: SkillCategory[] = [
   },
 ];
 
+const getLevelPercentage = (level: string) => {
+  switch (level) {
+    case "Expert":
+      return 100;
+    case "Advanced":
+      return 75;
+    case "Intermediate":
+      return 50;
+    default:
+      return 25;
+  }
+};
+
 const getLevelColor = (level: string) => {
   switch (level) {
     case "Expert":
-      return "bg-primary text-primary-foreground";
+      return "bg-primary";
     case "Advanced":
-      return "bg-accent text-accent-foreground";
+      return "bg-accent";
     case "Intermediate":
-      return "bg-secondary text-secondary-foreground";
+      return "bg-muted-foreground";
     default:
-      return "bg-muted text-muted-foreground";
+      return "bg-muted";
   }
 };
 
