@@ -23,16 +23,16 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <Badge variant="secondary" className="text-sm" data-testid="badge-role">
-                Software Developer
+                Full-Stack JavaScript Developer
               </Badge>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Shrikantha M.A
+                  Shrikantha M A
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                Full Stack Engineer building modern web applications with cutting-edge technologies
+                Building 2D HTML5 games, interactive web apps, and scalable CMS systems with React, Next.js, and game engines
               </p>
             </div>
 
@@ -44,8 +44,8 @@ export function HeroSection() {
                 </div>
                 <div className="w-px bg-border" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-accent" data-testid="text-projects">20+</div>
-                  <div className="text-sm text-muted-foreground">Projects</div>
+                  <div className="text-3xl font-bold text-accent" data-testid="text-projects">15+</div>
+                  <div className="text-sm text-muted-foreground">Games Built</div>
                 </div>
               </div>
             </div>

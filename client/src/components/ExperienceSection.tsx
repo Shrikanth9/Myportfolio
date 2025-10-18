@@ -12,40 +12,30 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: "Tech Innovations Inc",
-    role: "Senior Software Developer",
-    period: "2022 - Present",
+    company: "Songo Studios",
+    role: "Software Development Engineer (SDE)",
+    period: "Apr 2022 - Present",
     achievements: [
-      "Led development of microservices architecture serving 100K+ daily users",
-      "Reduced application load time by 40% through optimization",
-      "Mentored team of 5 junior developers",
-      "Implemented CI/CD pipeline reducing deployment time by 60%",
+      "Built and deployed game portal for multiple HTML5 games with seamless user experience",
+      "Developed promotional games for major brands including Pepsi, achieving 60% improvement in user onboarding",
+      "Built reusable CMS template framework to accelerate website creation, reducing average development time",
+      "Developed promotional games for Medel and Predator-Rulebook using JavaScript game engines",
+      "Created WebGL-based 3D game using Three.js and Cannon.js for enhanced visual experience",
+      "Optimized multiplayer game performance for smooth DRMA routing using Next.js and Pusher",
     ],
-    technologies: ["React", "Node.js", "AWS", "Docker", "Kubernetes"],
+    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "HTML5", "Phaser", "Three.js", "WebGL"],
   },
   {
-    company: "Digital Solutions Ltd",
-    role: "Full Stack Developer",
-    period: "2021 - 2022",
+    company: "Flipkart",
+    role: "SDE Consultant",
+    period: "Oct 2023 - Oct 2024",
     achievements: [
-      "Developed responsive web applications using React and TypeScript",
-      "Built RESTful APIs with Express.js and MongoDB",
-      "Collaborated with UX team to improve user experience",
-      "Integrated third-party payment gateways",
+      "Improved overall performance by developing a website for the internal Rewards Management System",
+      "Reduced configuration time and improved scalability of brands integration",
+      "Contributed to brand promotional games such as Shark Tank & 10U machine, and cricket game using Phaser",
+      "Developed a reusable game wrapper library to optimize mini-game development and play counts on Flipkart platform",
     ],
-    technologies: ["React", "TypeScript", "Express", "MongoDB", "Stripe"],
-  },
-  {
-    company: "StartUp Ventures",
-    role: "Junior Developer",
-    period: "2020 - 2021",
-    achievements: [
-      "Contributed to frontend development using modern frameworks",
-      "Fixed bugs and improved application performance",
-      "Participated in code reviews and agile ceremonies",
-      "Developed reusable component library",
-    ],
-    technologies: ["JavaScript", "Vue.js", "Node.js", "PostgreSQL"],
+    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Phaser", "Game Engines"],
   },
 ];
 

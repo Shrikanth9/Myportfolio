@@ -15,35 +15,35 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Analytics Dashboard",
+    title: "AI-Powered Income-Expense Tracker",
     description:
-      "A comprehensive analytics platform with real-time data visualization, customizable widgets, and advanced reporting features. Built with React and D3.js for interactive charts.",
+      "A comprehensive financial management website to track monthly and yearly income and expenses, featuring real-time email alerts. Integrated Gemini AI for expense trend analysis using transaction details, helping users make informed financial decisions.",
     image: dashboardImage,
-    technologies: ["React", "TypeScript", "D3.js", "Node.js", "MongoDB"],
+    technologies: ["Next.js", "Clerk", "Prisma", "Supabase", "Langraph", "Arcjet", "Gemini AI"],
     featured: true,
   },
   {
-    title: "E-Commerce Platform",
+    title: "Jarries-Services NPM Package",
     description:
-      "Full-featured online shopping platform with product management, cart functionality, payment integration, and order tracking. Includes admin dashboard for inventory management.",
+      "Developed an NPM package for managing reverse-engineers' Techlore/Polar aliases, streamlining chatbot integration. Published as a reusable library to help developers integrate AI services more efficiently in their applications.",
     image: ecommerceImage,
-    technologies: ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS", "AWS"],
+    technologies: ["JavaScript", "TypeScript", "Node.js", "NPM"],
     featured: true,
   },
   {
-    title: "Task Management System",
+    title: "HTML5 Game Portal - Songo Studios",
     description:
-      "Collaborative project management tool with kanban boards, team collaboration features, and real-time updates. Supports multiple workspaces and custom workflows.",
+      "Built and deployed a comprehensive game portal hosting multiple HTML5 games with seamless user experience. Developed promotional games for major brands including Pepsi, achieving 60% improvement in user onboarding and engagement.",
     image: dashboardImage,
-    technologies: ["Vue.js", "Express", "WebSocket", "Redis", "Docker"],
+    technologies: ["React", "Next.js", "Phaser", "JavaScript", "HTML5"],
     featured: false,
   },
   {
-    title: "Social Media API",
+    title: "Flipkart Rewards Management System",
     description:
-      "RESTful API for a social networking platform with authentication, post management, comments, likes, and user profiles. Includes comprehensive API documentation.",
+      "Developed internal website for Flipkart's Rewards Management System, improving overall performance and reducing brand configuration time. Created reusable game wrapper library for mini-game development, including promotional games like Shark Tank and cricket.",
     image: ecommerceImage,
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
+    technologies: ["React", "Next.js", "TypeScript", "Phaser", "Game Engines"],
     featured: false,
   },
 ];

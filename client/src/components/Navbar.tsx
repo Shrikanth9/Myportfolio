@@ -46,7 +46,7 @@ export function Navbar() {
             className="text-xl font-bold hover-elevate active-elevate-2 px-2 py-1 rounded-md"
             data-testid="button-logo"
           >
-            Shrikantha M.A
+            Shrikantha M A
           </button>
 
           <div className="hidden md:flex items-center gap-8">

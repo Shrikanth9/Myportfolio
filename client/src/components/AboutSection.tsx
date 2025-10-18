@@ -25,8 +25,8 @@ export function AboutSection() {
                     <AvatarFallback className="text-4xl">SM</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h3 className="text-2xl font-bold" data-testid="text-name">Shrikantha M.A</h3>
-                    <p className="text-muted-foreground">Software Developer</p>
+                    <h3 className="text-2xl font-bold" data-testid="text-name">Shrikantha M A</h3>
+                    <p className="text-muted-foreground">Full-Stack JavaScript Developer</p>
                   </div>
                   <Button className="w-full" data-testid="button-download-resume">
                     <Download className="mr-2 h-4 w-4" />
@@ -46,14 +46,14 @@ export function AboutSection() {
                 </h3>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Passionate Software Developer with 3+ years of experience in building scalable web applications
-                    and innovative solutions. Specialized in full-stack development with expertise in modern
-                    JavaScript frameworks, cloud technologies, and agile methodologies.
+                    Full-Stack JavaScript Developer with 3+ years of experience developing 2D HTML5 games, 
+                    interactive web apps, and scalable content management systems. Skilled in React, Next.js, 
+                    and game engine integration, with a strong focus on performance optimization and reusable architecture.
                   </p>
                   <p>
-                    Strong problem-solving skills with a proven track record of delivering high-quality software
-                    solutions that exceed client expectations. Committed to writing clean, maintainable code and
-                    staying current with emerging technologies.
+                    Proven track record of building engaging promotional games for major brands like Pepsi and Flipkart, 
+                    achieving significant improvements in user engagement. Expert in creating reusable frameworks and 
+                    component libraries that accelerate development workflows.
                   </p>
                 </div>
               </CardContent>
@@ -71,9 +71,18 @@ export function AboutSection() {
                       Bachelor of Engineering in Computer Science
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      VTU University
+                      Basira, Bangalore
                     </p>
-                    <p className="text-sm text-muted-foreground">2017 - 2021 | GPA: 8.5/10</p>
+                    <p className="text-sm text-muted-foreground">July 2018 - July 2022 | CGPA: 7.7/10</p>
+                  </div>
+                  <div className="border-l-2 border-accent pl-4 space-y-1">
+                    <h4 className="font-semibold">
+                      Pre-University College (PUC)
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Sacred Hearts Pre-University College, Madanthyar
+                    </p>
+                    <p className="text-sm text-muted-foreground">Apr 2016 - Apr 2018 | Percentage: 77%</p>
                   </div>
                 </div>
               </CardContent>

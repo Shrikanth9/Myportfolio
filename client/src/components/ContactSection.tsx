@@ -8,14 +8,14 @@ export function ContactSection() {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "shrikantha.ma@example.com",
-      href: "mailto:shrikantha.ma@example.com",
+      value: "shrikantha.ma@email.com",
+      href: "mailto:shrikantha.ma@email.com",
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 9353889753",
+      href: "tel:+919353889753",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
