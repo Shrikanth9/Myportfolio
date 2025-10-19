@@ -142,18 +142,18 @@ export function SkillsSection() {
             animate={controls}
           >
             {scrollSkills.map((skill, idx) => (
-              <AnimatedCard
-                key={skill + idx}
-                className="flex flex-col items-center p-4 bg-background shadow-md inline-block"
-              >
-                <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
-                  {skillIcons[skill] || <span className="text-xl font-bold">{skill[0]}</span>}
-                </div>
-                <div className="w-full text-center">
-                  <span className="text-xs mt-2 text-muted-foreground">{skill}</span>
-                </div>
-              </AnimatedCard>
+              <div className="w-24" key={`${skill}-${idx}`}>
+                <AnimatedCard className="flex flex-col items-center p-4 bg-background shadow-md inline-block">
+                  <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center mx-auto">
+                    {skillIcons[skill] || <span className="text-xl font-bold">{skill[0]}</span>}
+                  </div>
+                  <p className="text-xs mt-2 text-muted-foreground text-center break-words">
+                    {skill}
+                  </p>
+                </AnimatedCard>
+              </div>
             ))}
+
           </motion.div>
         </div>
       </div>
