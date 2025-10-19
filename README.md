@@ -72,7 +72,7 @@ Visit the live portfolio at: [Your deployed URL will be here]
 │   ├── routes.ts                   # API routes
 │   ├── storage.ts                  # Data storage
 │   └── index.ts                    # Server entry point
-├── attached_assets/                # Images and assets
+├── assets/                         # Images and assets
 │   └── generated_images/
 ├── tailwind.config.ts              # Tailwind configuration
 ├── tsconfig.json                   # TypeScript configuration
