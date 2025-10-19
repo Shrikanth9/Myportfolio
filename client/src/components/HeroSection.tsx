@@ -70,7 +70,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                Software Engineer specialising in 2D HTML5 games, interactive web apps, and scalable content systems.
+                Software Engineer specialising in 2D HTML5 games, interactive web apps, and scalable content management systems.
               </motion.p>
             </div>
 
