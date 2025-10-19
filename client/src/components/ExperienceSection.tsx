@@ -19,7 +19,8 @@ const experiences: Experience[] = [
     achievements: [
       "Engineered and maintained CMS web applications for multiple HTML5 games, improving database scaling and content update efficiency.",
       "Built a reusable CMS template framework that reduced average development time by ~50%.",
-      "Developed promotional games acquired for distribution and implemented DRM video playback frameworks.",
+      "Developed promotional games acquired by gameloft for distribution",
+      "Implemented DRM video playback framework.",
     ],
     technologies: ["JavaScript", "TypeScript", "React", "Next.js", "HTML5", "Phaser"],
   },
