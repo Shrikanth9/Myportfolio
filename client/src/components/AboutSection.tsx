@@ -10,7 +10,7 @@ import resumePdf from "@assets/resume.pdf";
 function downloadResume() {
   const a = document.createElement("a");
   a.href = resumePdf;
-  a.download = "resume.pdf";
+  a.download = "Shrikantha-M.A-SDE-resume.pdf";
   document.body.appendChild(a);
   a.click();
   a.remove();
