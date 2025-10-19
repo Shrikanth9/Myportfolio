@@ -3,7 +3,7 @@ import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ExternalLink, Github } from "lucide-react";
-import dashboardImage from "@assets/generated_images/Project_dashboard_screenshot_4766b531.png";
+import dashboardImage from "@assets/dashboard.png";
 interface Project {
   title: string;
   description: string;

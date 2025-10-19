@@ -22,7 +22,7 @@ import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
   ];
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@assets/generated_images/Modern_workspace_hero_image_19ce2878.png";
+import heroImage from "@assets/work.png";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
