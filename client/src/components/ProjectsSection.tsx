@@ -11,6 +11,8 @@ interface Project {
   image: string;
   technologies: string[];
   featured: boolean;
+  liveDemoUrl?: string;
+  codeUrl?: string;
 }
 
 const projects: Project[] = [
@@ -21,6 +23,8 @@ const projects: Project[] = [
     image: dashboardImage,
     technologies: ["Next.js", "Prisma", "Supabase", "Gemini AI"],
     featured: true,
+    liveDemoUrl: "https://budget-tracker-eight-chi.vercel.app",
+    codeUrl: "https://github.com/Shrikanth9/budget-tracker",
   },
   {
     title: "sprites-extract (NPM)",
@@ -29,6 +33,8 @@ const projects: Project[] = [
     image: ecommerceImage,
     technologies: ["JavaScript", "TypeScript", "Node.js"],
     featured: true,
+    liveDemoUrl: undefined,
+    codeUrl: "https://github.com/Shrikanth9/sprites-extract",
   },
 ];
 
@@ -80,7 +86,13 @@ export function ProjectsSection() {
               <CardFooter className="p-6 pt-0 flex gap-4">
                 <Button
                   variant="default"
-                  onClick={() => console.log(`View ${project.title} live`)}
+                  onClick={() => {
+                    if (project.liveDemoUrl) {
+                      window.open(project.liveDemoUrl, "_blank", "noopener,noreferrer");
+                    } else {
+                      console.log(`No live demo available for ${project.title}`);
+                    }
+                  }}
                   data-testid={`button-project-live-${index}`}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
@@ -88,7 +100,13 @@ export function ProjectsSection() {
                 </Button>
                 <Button
                   variant="outline"
-                  onClick={() => console.log(`View ${project.title} code`)}
+                  onClick={() => {
+                    if (project.codeUrl) {
+                      window.open(project.codeUrl, "_blank", "noopener,noreferrer");
+                    } else {
+                      console.log(`No code URL available for ${project.title}`);
+                    }
+                  }}
                   data-testid={`button-project-github-${index}`}
                 >
                   <Github className="mr-2 h-4 w-4" />
