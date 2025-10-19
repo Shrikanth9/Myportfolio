@@ -1,9 +1,42 @@
-import { CardContent } from "@/components/ui/card";
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
-import { Badge } from "@/components/ui/badge";
 import { Code2, Database, Cloud, Wrench } from "lucide-react";
+import { FaCube, FaNetworkWired } from "react-icons/fa";
+
+import {
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiMobx,
+  SiThreedotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiMongodb,
+  SiPostgresql,
+  SiGit,
+  SiFigma,
+  SiVite,
+} from "react-icons/si";
+
+const skillIcons: Record<string, JSX.Element> = {
+  "TypeScript": <SiTypescript className="w-8 h-8 text-[#3178c6]" />,
+  "React": <SiReact className="w-8 h-8 text-[#61dafb]" />,
+  "Next.js": <SiNextdotjs className="w-8 h-8 text-black dark:text-white" />,
+  "MobX": <SiMobx className="w-8 h-8 text-[#ff9955]" />,
+  "Phaser": <FaCube className="w-8 h-8 text-purple-500" />,
+  "Three.js": <SiThreedotjs className="w-8 h-8 text-black" />,
+  "Node.js": <SiNodedotjs className="w-8 h-8 text-[#3c873a]" />,
+  "Express": <SiExpress className="w-8 h-8 text-black" />,
+  "MySQL": <SiMysql className="w-8 h-8 text-[#00758f]" />,
+  "MongoDB": <SiMongodb className="w-8 h-8 text-[#47a248]" />,
+  "PostgreSQL": <SiPostgresql className="w-8 h-8 text-[#336791]" />,
+  "Git": <SiGit className="w-8 h-8 text-[#f05032]" />,
+  "Figma": <SiFigma className="w-8 h-8 text-[#f24e1e]" />,
+  "Vite": <SiVite className="w-8 h-8 text-[#646cff]" />,
+  "REST APIs": <FaNetworkWired className="w-8 h-8 text-[#e535ab]" />,
+};
 
 interface SkillCategory {
   title: string;
@@ -53,62 +86,41 @@ const skillCategories: SkillCategory[] = [
   },
 ];
 
-const getLevelPercentage = (level: string) => {
-  switch (level) {
-    case "Expert":
-      return 100;
-    case "Advanced":
-      return 75;
-    case "Intermediate":
-      return 50;
-    default:
-      return 25;
-  }
-};
-
-const getLevelColor = (level: string) => {
-  switch (level) {
-    case "Expert":
-      return "bg-primary";
-    case "Advanced":
-      return "bg-accent";
-    case "Intermediate":
-      return "bg-muted-foreground";
-    default:
-      return "bg-muted";
-  }
-};
-
 export function SkillsSection() {
-  const allSkills = Array.from(new Set(skillCategories.flatMap(cat => cat.skills.map(skill => skill.name))));
-  // Duplicate skills for seamless infinite scroll
+  const allSkills = Array.from(
+    new Set(skillCategories.flatMap((cat) => cat.skills.map((skill) => skill.name)))
+  );
   const scrollSkills = [...allSkills, ...allSkills];
-  const [isUserScrolling, setIsUserScrolling] = useState(false);
-  const [scrollX, setScrollX] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+  const [scrollWidth, setScrollWidth] = useState(0);
 
-  // Pause animation when user interacts and track scroll position
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    let timeout: NodeJS.Timeout | undefined;
-    const handleScroll = () => {
-      setIsUserScrolling(true);
-      // Prevent scrolling too far right
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      if (el.scrollLeft > maxScroll - 200) {
-        el.scrollLeft = maxScroll - 200;
-      }
-      setScrollX(el.scrollLeft);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsUserScrolling(false), 1200);
+    if (!scrollRef.current) return;
+    const firstSetWidth = scrollRef.current.scrollWidth / 2;
+    setScrollWidth(firstSetWidth);
+  }, [scrollSkills.length]);
+
+  useEffect(() => {
+    if (!scrollWidth) return;
+
+    const animateScroll = () => {
+      controls
+        .start({
+          x: -scrollWidth,
+          transition: {
+            duration: 18,
+            ease: "linear",
+          },
+        })
+        .then(() => {
+          controls.set({ x: 0 });
+          animateScroll();
+        });
     };
-    el.addEventListener('scroll', handleScroll);
-    return () => {
-      el.removeEventListener('scroll', handleScroll);
-      clearTimeout(timeout);
-    };
-  }, []);
+
+    animateScroll();
+  }, [scrollWidth, controls]);
 
   return (
     <section id="skills" className="py-20 md:py-32">
@@ -120,26 +132,22 @@ export function SkillsSection() {
           </p>
         </div>
         <div
-          className="overflow-x-auto py-8 scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent"
+          className="overflow-hidden py-8"
+          style={{ WebkitOverflowScrolling: "touch" }}
           ref={scrollRef}
-          style={{ WebkitOverflowScrolling: 'touch' }}
         >
           <motion.div
-            className="flex gap-8"
-            style={{ width: 'max-content' }}
-            animate={isUserScrolling ? { x: -scrollX } : { x: [ -scrollX, -1000 ] }}
-            transition={isUserScrolling ? undefined : {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 18,
-              ease: "linear"
-            }}
+            className="flex gap-8 whitespace-nowrap"
+            style={{ width: "max-content" }}
+            animate={controls}
           >
             {scrollSkills.map((skill, idx) => (
-              <AnimatedCard key={skill + idx} className="flex flex-col items-center p-4 bg-background shadow-md">
-                {/* Replace with actual logo imports for each skill if available */}
-                <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center text-xl font-bold">
-                  {skill[0]}
+              <AnimatedCard
+                key={skill + idx}
+                className="flex flex-col items-center p-4 bg-background shadow-md inline-block"
+              >
+                <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
+                  {skillIcons[skill] || <span className="text-xl font-bold">{skill[0]}</span>}
                 </div>
                 <span className="text-xs mt-2 text-muted-foreground">{skill}</span>
               </AnimatedCard>
@@ -150,3 +158,4 @@ export function SkillsSection() {
     </section>
   );
 }
+
