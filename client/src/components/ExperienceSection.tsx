@@ -12,30 +12,25 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: "Songo Studios",
+    company: "Juego Studios",
     role: "Software Development Engineer (SDE)",
     period: "Apr 2022 - Present",
     achievements: [
-      "Built and deployed game portal for multiple HTML5 games with seamless user experience",
-      "Developed promotional games for major brands including Pepsi, achieving 60% improvement in user onboarding",
-      "Built reusable CMS template framework to accelerate website creation, reducing average development time",
-      "Developed promotional games for Medel and Predator-Rulebook using JavaScript game engines",
-      "Created WebGL-based 3D game using Three.js and Cannon.js for enhanced visual experience",
-      "Optimized multiplayer game performance for smooth DRMA routing using Next.js and Pusher",
+      "Engineered and maintained CMS web applications for multiple HTML5 games, improving database scaling and content update efficiency.",
+      "Built a reusable CMS template framework that reduced average development time by ~50%.",
+      "Developed promotional games acquired for distribution and implemented DRM video playback frameworks.",
     ],
-    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "HTML5", "Phaser", "Three.js", "WebGL"],
+    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "HTML5", "Phaser"],
   },
   {
     company: "Flipkart",
     role: "SDE Consultant",
     period: "Oct 2023 - Oct 2024",
     achievements: [
-      "Improved overall performance by developing a website for the internal Rewards Management System",
-      "Reduced configuration time and improved scalability of brands integration",
-      "Contributed to brand promotional games such as Shark Tank & 10U machine, and cricket game using Phaser",
-      "Developed a reusable game wrapper library to optimize mini-game development and play counts on Flipkart platform",
+      "Designed and implemented the internal Rewards Management System website, improving reward configuration workflows.",
+      "Developed promotional games and utilities used during large-scale campaigns, delivering high engagement.",
     ],
-    technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Phaser", "Game Engines"],
+    technologies: ["JavaScript", "TypeScript", "React", "Phaser"],
   },
 ];
 

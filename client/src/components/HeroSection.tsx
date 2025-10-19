@@ -32,7 +32,7 @@ export function HeroSection() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
-                Building 2D HTML5 games, interactive web apps, and scalable CMS systems with React, Next.js, and game engines
+                Software Engineer specialising in 2D HTML5 games, interactive web apps, and scalable content systems.
               </p>
             </div>
 
@@ -44,8 +44,8 @@ export function HeroSection() {
                 </div>
                 <div className="w-px bg-border" />
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-accent" data-testid="text-projects">15+</div>
-                  <div className="text-sm text-muted-foreground">Games Built</div>
+                  <div className="text-3xl font-bold text-accent" data-testid="text-projects">3+</div>
+                    <div className="text-sm text-muted-foreground">Projects</div>
                 </div>
               </div>
             </div>

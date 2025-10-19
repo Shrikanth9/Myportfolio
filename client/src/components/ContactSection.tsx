@@ -8,14 +8,14 @@ export function ContactSection() {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "shrikantha.ma@email.com",
-      href: "mailto:shrikantha.ma@email.com",
+      value: "[your-email@example.com]",
+      href: "mailto:your-email@example.com",
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Phone",
-      value: "+91 9353889753",
-      href: "tel:+919353889753",
+      value: "+91 9353889153",
+      href: "tel:+919353889153",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -29,12 +29,12 @@ export function ContactSection() {
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Shrikanth9",
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/shrikanthma/",
     },
   ];
 

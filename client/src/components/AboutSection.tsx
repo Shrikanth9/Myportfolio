@@ -46,14 +46,10 @@ export function AboutSection() {
                 </h3>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Full-Stack JavaScript Developer with 3+ years of experience developing 2D HTML5 games, 
-                    interactive web apps, and scalable content management systems. Skilled in React, Next.js, 
-                    and game engine integration, with a strong focus on performance optimization and reusable architecture.
+                    Software Engineer with 3+ years of experience developing 2D HTML5 games, interactive web apps, and scalable content management systems. Skilled in React, Next.js, and game engine integration, with a strong focus on performance optimization and reusable architecture.
                   </p>
                   <p>
-                    Proven track record of building engaging promotional games for major brands like Pepsi and Flipkart, 
-                    achieving significant improvements in user engagement. Expert in creating reusable frameworks and 
-                    component libraries that accelerate development workflows.
+                    Built promotional and engaging web games and CMS systems for clients and internal platforms. Experienced in creating reusable frameworks that reduce development time and improve maintainability.
                   </p>
                 </div>
               </CardContent>
@@ -67,22 +63,22 @@ export function AboutSection() {
                 </h3>
                 <div className="space-y-4">
                   <div className="border-l-2 border-primary pl-4 space-y-1">
-                    <h4 className="font-semibold" data-testid="text-degree">
-                      Bachelor of Engineering in Computer Science
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Basira, Bangalore
-                    </p>
-                    <p className="text-sm text-muted-foreground">July 2018 - July 2022 | CGPA: 7.7/10</p>
+                      <h4 className="font-semibold" data-testid="text-degree">
+                        Bachelor’s Degree in Computer Science
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Vivekananda College of Engineering, Puttur
+                      </p>
+                      <p className="text-sm text-muted-foreground">July 2018 - July 2022 | CGPA: 7.7</p>
                   </div>
                   <div className="border-l-2 border-accent pl-4 space-y-1">
-                    <h4 className="font-semibold">
-                      Pre-University College (PUC)
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Sacred Hearts Pre-University College, Madanthyar
-                    </p>
-                    <p className="text-sm text-muted-foreground">Apr 2016 - Apr 2018 | Percentage: 77%</p>
+                      <h4 className="font-semibold">
+                        Pre-University College (PUC)
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Sacred Heart Pre-University College, Madanthyar
+                      </p>
+                      <p className="text-sm text-muted-foreground">Apr 2016 - Apr 2018 | Percentage: 83%</p>
                   </div>
                 </div>
               </CardContent>

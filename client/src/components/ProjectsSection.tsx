@@ -15,35 +15,27 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "AI-Powered Income-Expense Tracker",
+    title: "AI-powered Income-Expense Tracker",
     description:
-      "A comprehensive financial management website to track monthly and yearly income and expenses, featuring real-time email alerts. Integrated Gemini AI for expense trend analysis using transaction details, helping users make informed financial decisions.",
+      "A Next.js app with AI-based receipt scanning and real-time email alerts for budget thresholds.",
     image: dashboardImage,
-    technologies: ["Next.js", "Clerk", "Prisma", "Supabase", "Langraph", "Arcjet", "Gemini AI"],
+    technologies: ["Next.js", "Prisma", "Supabase", "Gemini AI"],
     featured: true,
   },
   {
-    title: "Jarries-Services NPM Package",
+    title: "sprites-extract (NPM)",
     description:
-      "Developed an NPM package for managing reverse-engineers' Techlore/Polar aliases, streamlining chatbot integration. Published as a reusable library to help developers integrate AI services more efficiently in their applications.",
+      "An open-source NPM package that reverse-engineers TexturePacker atlases to recover individual sprites.",
     image: ecommerceImage,
-    technologies: ["JavaScript", "TypeScript", "Node.js", "NPM"],
+    technologies: ["JavaScript", "TypeScript", "Node.js"],
     featured: true,
   },
   {
-    title: "HTML5 Game Portal - Songo Studios",
+    title: "HTML5 Game Portal & Promotional Games",
     description:
-      "Built and deployed a comprehensive game portal hosting multiple HTML5 games with seamless user experience. Developed promotional games for major brands including Pepsi, achieving 60% improvement in user onboarding and engagement.",
+      "Portal and several promotional games built for clients, focusing on engagement and performance optimizations.",
     image: dashboardImage,
-    technologies: ["React", "Next.js", "Phaser", "JavaScript", "HTML5"],
-    featured: false,
-  },
-  {
-    title: "Flipkart Rewards Management System",
-    description:
-      "Developed internal website for Flipkart's Rewards Management System, improving overall performance and reducing brand configuration time. Created reusable game wrapper library for mini-game development, including promotional games like Shark Tank and cricket.",
-    image: ecommerceImage,
-    technologies: ["React", "Next.js", "TypeScript", "Phaser", "Game Engines"],
+    technologies: ["HTML5", "Phaser", "JavaScript"],
     featured: false,
   },
 ];
