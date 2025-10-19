@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar } from "lucide-react";
 
@@ -50,9 +51,9 @@ export function ExperienceSection() {
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card
+              <AnimatedCard
                 key={index}
-                className="md:ml-20 hover-elevate transition-all duration-300"
+                className="md:ml-20"
                 data-testid={`card-experience-${index}`}
               >
                 <CardContent className="p-6">
@@ -92,7 +93,7 @@ export function ExperienceSection() {
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+              </AnimatedCard>
             ))}
           </div>
         </div>

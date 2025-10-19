@@ -1,4 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Database, Cloud, Wrench } from "lucide-react";
 
@@ -27,10 +29,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Phaser", level: "Expert" },
       { name: "Three.js", level: "Advanced" },
-      { name: "WebGL", level: "Advanced" },
       { name: "HTML5 Games", level: "Expert" },
-      { name: "Cannon.js", level: "Intermediate" },
-      { name: "2D Graphics", level: "Expert" },
     ],
   },
   {
@@ -42,7 +41,6 @@ const skillCategories: SkillCategory[] = [
       { name: "MySQL", level: "Advanced" },
       { name: "MongoDB", level: "Advanced" },
       { name: "PostgreSQL", level: "Advanced" },
-      { name: "Pusher", level: "Intermediate" },
     ],
   },
   {
@@ -51,8 +49,6 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Git", level: "Expert" },
       { name: "Figma", level: "Advanced" },
-      { name: "NPM", level: "Expert" },
-      { name: "Webpack", level: "Advanced" },
       { name: "Vite", level: "Advanced" },
       { name: "REST APIs", level: "Expert" },
     ],
@@ -86,54 +82,58 @@ const getLevelColor = (level: string) => {
 };
 
 export function SkillsSection() {
+  const allSkills = Array.from(new Set(skillCategories.flatMap(cat => cat.skills.map(skill => skill.name))));
   return (
     <section id="skills" className="py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Skills & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Tech Stack</h2>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Technical expertise across various domains
+            Technologies I use most often
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => (
-            <Card
-              key={index}
-              className="hover-elevate transition-all duration-300"
-              data-testid={`card-skill-category-${index}`}
-            >
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                    {category.icon}
+        <div className="overflow-x-hidden py-8">
+          <motion.div
+            className="flex gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.18,
+                  delayChildren: 0.2,
+                }
+              }
+            }}
+          >
+            {allSkills.map((skill, idx) => (
+              <motion.div
+                key={skill}
+                variants={{
+                  hidden: { opacity: 0, x: 60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: 0.7,
+                      ease: "easeOut"
+                    }
+                  }
+                }}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <AnimatedCard className="flex flex-col items-center p-4 bg-background shadow-md">
+                  {/* Replace with actual logo imports for each skill if available */}
+                  <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center text-xl font-bold">
+                    {skill[0]}
                   </div>
-                  <h3 className="text-lg font-bold">{category.title}</h3>
-                </div>
-
-                <div className="space-y-3">
-                  {category.skills.map((skill) => (
-                    <div key={skill.name} className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-foreground font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-xs text-muted-foreground">
-                          {getLevelPercentage(skill.level)}%
-                        </span>
-                      </div>
-                      <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
-                        <div
-                          className={`h-full ${getLevelColor(skill.level)} transition-all duration-500 rounded-full`}
-                          style={{ width: `${getLevelPercentage(skill.level)}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <span className="text-xs mt-2 text-muted-foreground">{skill}</span>
+                </AnimatedCard>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

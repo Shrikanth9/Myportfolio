@@ -1,6 +1,7 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { CardContent } from "@/components/ui/card";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Download, GraduationCap, Briefcase } from "lucide-react";
 import profileImage from "@assets/myPhoto.jpg";
@@ -28,24 +29,24 @@ export function AboutSection() {
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
-            <Card className="overflow-hidden">
+            <AnimatedCard className="overflow-hidden">
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center space-y-4">
                   <Avatar className="h-48 w-48 border-4 border-primary/20">
                     <AvatarImage src={profileImage} alt="Shrikantha M.A" />
                     <AvatarFallback className="text-4xl">SM</AvatarFallback>
                   </Avatar>
-                  <Button className="w-full" onClick={downloadResume} data-testid="button-download-resume">
+                  <AnimatedButton className="w-full" onClick={downloadResume} data-testid="button-download-resume">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume
-                  </Button>
+                  </AnimatedButton>
                 </div>
               </CardContent>
-            </Card>
+            </AnimatedCard>
           </div>
 
           <div className="lg:col-span-2 space-y-6">
-            <Card>
+            <AnimatedCard>
               <CardContent className="p-6 space-y-4">
                 <h3 className="text-xl font-bold flex items-center gap-2">
                   <Briefcase className="h-5 w-5 text-primary" />
@@ -60,9 +61,9 @@ export function AboutSection() {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </AnimatedCard>
 
-            <Card>
+            <AnimatedCard>
               <CardContent className="p-6 space-y-4">
                 <h3 className="text-xl font-bold flex items-center gap-2">
                   <GraduationCap className="h-5 w-5 text-accent" />
@@ -89,7 +90,7 @@ export function AboutSection() {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </AnimatedCard>
           </div>
         </div>
       </div>

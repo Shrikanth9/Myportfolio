@@ -1,10 +1,9 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { CardContent, CardFooter } from "@/components/ui/card";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ExternalLink, Github } from "lucide-react";
 import dashboardImage from "@assets/generated_images/Project_dashboard_screenshot_4766b531.png";
-import ecommerceImage from "@assets/generated_images/E-commerce_project_screenshot_e48cf712.png";
-
 interface Project {
   title: string;
   description: string;
@@ -26,16 +25,6 @@ const projects: Project[] = [
     liveDemoUrl: "https://budget-tracker-eight-chi.vercel.app",
     codeUrl: "https://github.com/Shrikanth9/budget-tracker",
   },
-  {
-    title: "sprites-extract (NPM)",
-    description:
-      "An open-source NPM package that reverse-engineers TexturePacker atlases to recover individual sprites.",
-    image: ecommerceImage,
-    technologies: ["JavaScript", "TypeScript", "Node.js"],
-    featured: true,
-    liveDemoUrl: undefined,
-    codeUrl: "https://github.com/Shrikanth9/sprites-extract",
-  },
 ];
 
 export function ProjectsSection() {
@@ -51,9 +40,9 @@ export function ProjectsSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card
+            <AnimatedCard
               key={index}
-              className={`overflow-hidden hover-elevate transition-all duration-300 ${
+              className={`overflow-hidden ${
                 project.featured ? "md:col-span-2 lg:col-span-1" : ""
               }`}
               data-testid={`card-project-${index}`}
@@ -84,7 +73,7 @@ export function ProjectsSection() {
                 </div>
               </CardContent>
               <CardFooter className="p-6 pt-0 flex gap-4">
-                <Button
+                <AnimatedButton
                   variant="default"
                   onClick={() => {
                     if (project.liveDemoUrl) {
@@ -97,8 +86,8 @@ export function ProjectsSection() {
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Live Demo
-                </Button>
-                <Button
+                </AnimatedButton>
+                <AnimatedButton
                   variant="outline"
                   onClick={() => {
                     if (project.codeUrl) {
@@ -111,9 +100,9 @@ export function ProjectsSection() {
                 >
                   <Github className="mr-2 h-4 w-4" />
                   Code
-                </Button>
+                </AnimatedButton>
               </CardFooter>
-            </Card>
+            </AnimatedCard>
           ))}
         </div>
       </div>

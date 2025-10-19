@@ -95,16 +95,17 @@ export function ContactSection() {
                 </p>
                 <div className="flex justify-center gap-4">
                   {socialLinks.map((link, index) => (
-                    <Button
+                    <a
                       key={index}
-                      variant="outline"
-                      size="lg"
-                      onClick={() => window.open(link.href, '_blank', 'noopener,noreferrer')}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       data-testid={`button-social-${link.label.toLowerCase()}`}
+                      className="inline-flex items-center px-4 py-2 border rounded-lg text-base font-medium transition hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                       {link.icon}
                       <span className="ml-2">{link.label}</span>
-                    </Button>
+                    </a>
                   ))}
                 </div>
               </div>

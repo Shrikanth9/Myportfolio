@@ -1,7 +1,29 @@
+
 import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
+  const socialLinks = [
+    {
+      icon: <Github className="h-5 w-5" />,
+      label: "GitHub",
+      href: "https://github.com/Shrikanth9",
+      type: "external"
+    },
+    {
+      icon: <Linkedin className="h-5 w-5" />,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/shrikanth-m-a-69827020a/",
+      type: "external"
+    },
+    {
+      icon: <Mail className="h-5 w-5" />,
+      label: "Email",
+      href: "mailto:shrikanthbhat30@gmail.com",
+      type: "mailto"
+    }
+  ];
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@assets/generated_images/Modern_workspace_hero_image_19ce2878.png";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -22,18 +44,34 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <Badge variant="secondary" className="text-sm" data-testid="badge-role">
-                Software Developer
-              </Badge>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              <motion.div
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                <Badge variant="secondary" className="text-sm" data-testid="badge-role">
+                  Software Developer
+                </Badge>
+              </motion.div>
+              <motion.h1
+                className="text-5xl md:text-7xl font-bold tracking-tight"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.3 }}
+              >
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Shrikanth
                 </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
+              </motion.h1>
+              <motion.p
+                className="text-xl md:text-2xl text-muted-foreground"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
                 Software Engineer specialising in 2D HTML5 games, interactive web apps, and scalable content systems.
-              </p>
+              </motion.p>
             </div>
 
             <div className="flex flex-wrap gap-4 items-center">
@@ -69,35 +107,35 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="flex gap-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                data-testid="button-github"
-                onClick={() => console.log("GitHub clicked")}
-              >
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                data-testid="button-linkedin"
-                onClick={() => console.log("LinkedIn clicked")}
-              >
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                data-testid="button-email"
-                onClick={() => console.log("Email clicked")}
-              >
-                <Mail className="h-5 w-5" />
-              </Button>
-            </div>
+            {/* <div className="flex gap-4">
+              {socialLinks.map((link, idx) => (
+                <Button
+                  key={link.label}
+                  variant="ghost"
+                  size="icon"
+                  data-testid={`button-${link.label.toLowerCase()}`}
+                  onClick={() => {
+                    if (link.type === "external") {
+                      window.open(link.href, "_blank", "noopener,noreferrer");
+                    } else {
+                      window.open(link.href);
+                    }
+                  }}
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </Button>
+              ))}
+            </div> */}
           </div>
 
-          <div className="relative lg:block hidden">
+          <motion.div
+            className="relative lg:block hidden"
+            initial={{ opacity: 0, scale: 0.8, x: 100 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
+          >
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 mix-blend-overlay" />
               <img
@@ -106,7 +144,7 @@ export function HeroSection() {
                 className="w-full h-auto object-cover"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
