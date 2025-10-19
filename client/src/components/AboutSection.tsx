@@ -1,8 +1,19 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Download, GraduationCap, Briefcase } from "lucide-react";
 import profileImage from "@assets/generated_images/Professional_developer_headshot_45a65e51.png";
+import resumePdf from "@assets/resume.pdf";
+
+function downloadResume() {
+  const a = document.createElement("a");
+  a.href = resumePdf;
+  a.download = "resume.pdf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
 
 export function AboutSection() {
   return (
@@ -24,11 +35,7 @@ export function AboutSection() {
                     <AvatarImage src={profileImage} alt="Shrikantha M.A" />
                     <AvatarFallback className="text-4xl">SM</AvatarFallback>
                   </Avatar>
-                  <div>
-                    <h3 className="text-2xl font-bold" data-testid="text-name">Shrikantha M A</h3>
-                    <p className="text-muted-foreground">Full-Stack JavaScript Developer</p>
-                  </div>
-                  <Button className="w-full" data-testid="button-download-resume">
+                  <Button className="w-full" onClick={downloadResume} data-testid="button-download-resume">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume
                   </Button>
@@ -63,22 +70,22 @@ export function AboutSection() {
                 </h3>
                 <div className="space-y-4">
                   <div className="border-l-2 border-primary pl-4 space-y-1">
-                      <h4 className="font-semibold" data-testid="text-degree">
-                        Bachelor’s Degree in Computer Science
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Vivekananda College of Engineering, Puttur
-                      </p>
-                      <p className="text-sm text-muted-foreground">July 2018 - July 2022 | CGPA: 7.7</p>
+                    <h4 className="font-semibold" data-testid="text-degree">
+                      Bachelor’s Degree in Computer Science
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Vivekananda College of Engineering, Puttur
+                    </p>
+                    <p className="text-sm text-muted-foreground">July 2018 - July 2022 | CGPA: 7.7</p>
                   </div>
                   <div className="border-l-2 border-accent pl-4 space-y-1">
-                      <h4 className="font-semibold">
-                        Pre-University College (PUC)
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Sacred Heart Pre-University College, Madanthyar
-                      </p>
-                      <p className="text-sm text-muted-foreground">Apr 2016 - Apr 2018 | Percentage: 83%</p>
+                    <h4 className="font-semibold">
+                      Pre-University College (PUC)
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Sacred Heart Pre-University College, Madanthyar
+                    </p>
+                    <p className="text-sm text-muted-foreground">Apr 2016 - Apr 2018 | Percentage: 83%</p>
                   </div>
                 </div>
               </CardContent>

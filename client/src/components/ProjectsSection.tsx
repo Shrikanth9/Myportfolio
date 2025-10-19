@@ -30,14 +30,6 @@ const projects: Project[] = [
     technologies: ["JavaScript", "TypeScript", "Node.js"],
     featured: true,
   },
-  {
-    title: "HTML5 Game Portal & Promotional Games",
-    description:
-      "Portal and several promotional games built for clients, focusing on engagement and performance optimizations.",
-    image: dashboardImage,
-    technologies: ["HTML5", "Phaser", "JavaScript"],
-    featured: false,
-  },
 ];
 
 export function ProjectsSection() {

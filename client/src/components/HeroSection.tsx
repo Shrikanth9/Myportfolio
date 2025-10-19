@@ -28,7 +28,7 @@ export function HeroSection() {
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Shrikantha M A
+                  Shrikanth
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
@@ -42,11 +42,11 @@ export function HeroSection() {
                   <div className="text-3xl font-bold text-primary" data-testid="text-experience">3+</div>
                   <div className="text-sm text-muted-foreground">Years Exp</div>
                 </div>
-                <div className="w-px bg-border" />
-                <div className="text-center">
+                {/* <div className="w-px bg-border" /> */}
+                {/* <div className="text-center">
                   <div className="text-3xl font-bold text-accent" data-testid="text-projects">3+</div>
                     <div className="text-sm text-muted-foreground">Projects</div>
-                </div>
+                </div> */}
               </div>
             </div>
 
