@@ -8,8 +8,8 @@ export function ContactSection() {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "[your-email@example.com]",
-      href: "mailto:your-email@example.com",
+      value: "shrikanthbhat30@gmail.com",
+      href: "mailto:shrikanthbhat30@gmail.com",
     },
     {
       icon: <Phone className="h-5 w-5" />,
@@ -34,7 +34,7 @@ export function ContactSection() {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/shrikanthma/",
+      href: "https://www.linkedin.com/in/shrikanth-m-a-69827020a/",
     },
   ];
 
@@ -79,7 +79,7 @@ export function ContactSection() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => console.log(`Contact via ${item.label}`)}
+                        onClick={() => window.open(item.href, '_blank', 'noopener,noreferrer')}
                         data-testid={`button-contact-${item.label.toLowerCase()}`}
                       >
                         Connect
@@ -99,7 +99,7 @@ export function ContactSection() {
                       key={index}
                       variant="outline"
                       size="lg"
-                      onClick={() => console.log(`Visit ${link.label}`)}
+                      onClick={() => window.open(link.href, '_blank', 'noopener,noreferrer')}
                       data-testid={`button-social-${link.label.toLowerCase()}`}
                     >
                       {link.icon}

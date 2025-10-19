@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Download, GraduationCap, Briefcase } from "lucide-react";
-import profileImage from "@assets/generated_images/Professional_developer_headshot_45a65e51.png";
+import profileImage from "@assets/myPhoto.jpg";
 import resumePdf from "@assets/resume.pdf";
 
 function downloadResume() {
