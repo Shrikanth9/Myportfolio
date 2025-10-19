@@ -1,6 +1,6 @@
 # Shrikantha M A - Portfolio Website
 
-A modern, responsive portfolio website showcasing professional experience, skills, and projects as a Full-Stack JavaScript Developer specializing in HTML5 game development.
+A modern, responsive portfolio website showcasing professional experience, skills, and projects as a Software Developer specializing in HTML5 game development.
 
 ## 🚀 Live Demo
 

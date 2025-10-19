@@ -23,7 +23,7 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <Badge variant="secondary" className="text-sm" data-testid="badge-role">
-                Full-Stack JavaScript Developer
+                Software Developer
               </Badge>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
                 Hi, I'm{" "}
