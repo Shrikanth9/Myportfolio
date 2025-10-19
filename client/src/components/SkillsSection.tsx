@@ -149,7 +149,9 @@ export function SkillsSection() {
                 <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center">
                   {skillIcons[skill] || <span className="text-xl font-bold">{skill[0]}</span>}
                 </div>
-                <span className="text-xs mt-2 text-muted-foreground">{skill}</span>
+                <div className="w-full text-center">
+                  <span className="text-xs mt-2 text-muted-foreground">{skill}</span>
+                </div>
               </AnimatedCard>
             ))}
           </motion.div>
