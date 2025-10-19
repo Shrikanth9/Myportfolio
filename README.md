@@ -189,6 +189,17 @@ npm run preview      # Preview production build
    vercel
    ```
 
+If you prefer to deploy from the Vercel dashboard (recommended):
+
+1. Push your repository to GitHub.
+2. On Vercel, choose "New Project" and import your repository.
+3. Set the Root Directory to `./client` (if Vercel doesn't autodetect).
+4. Build Command: `npm run build` (run from repository root).
+5. Output Directory: `dist/public`.
+6. Click Deploy.
+
+Note: This repository was converted to a Vite-only static build. The `server/` folder remains for reference but is not required for deployment unless you need server APIs. If you later need server endpoints, deploy them separately (Render/Railway) or convert to Vercel Serverless functions.
+
 ### Deploy to Netlify
 
 1. Build the project:
