@@ -2,16 +2,18 @@ import { CardContent, CardFooter } from "@/components/ui/card";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Loader2 } from "lucide-react";
+import { useState, useRef, useEffect } from 'react';
 import dashboardImage from "@assets/dashboard.png";
 interface Project {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   technologies: string[];
   featured: boolean;
   liveDemoUrl?: string;
   codeUrl?: string;
+  isPreview?: boolean;
 }
 
 const projects: Project[] = [
@@ -19,13 +21,80 @@ const projects: Project[] = [
     title: "AI-powered Income-Expense Tracker",
     description:
       "A Next.js app with AI-based receipt scanning and real-time email alerts for budget thresholds.",
-    image: dashboardImage,
     technologies: ["Next.js", "Prisma", "Supabase", "Gemini AI"],
     featured: true,
     liveDemoUrl: "https://budget-tracker-eight-chi.vercel.app",
     codeUrl: "https://github.com/Shrikanth9/budget-tracker",
+    isPreview: false
+  },
+  {
+    title: "Food Recipe App",
+    description:
+      "A Simple next.js food recipe app with PostgreSQL database",
+    technologies: ["Next.js", "PostgreSQL"],
+    featured: true,
+    liveDemoUrl: "https://nextjs-food-app-lyart.vercel.app/",
+    codeUrl: "https://github.com/Shrikanth9/nextjs-food-app",
+    isPreview: true
   },
 ];
+
+function ProjectIframe({ url, title }: { url: string; title: string }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const handleLoad = () => setIsLoading(false);
+    const iframe = iframeRef.current;
+    
+    if (iframe) {
+      iframe.addEventListener('load', handleLoad);
+      
+      const timeoutId = setTimeout(() => setIsLoading(false), 3000);
+      
+      return () => {
+        iframe.removeEventListener('load', handleLoad);
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [url]);
+
+  if (!url) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-muted">
+        <p className="text-muted-foreground">No preview available</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full h-full relative">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-muted/80 backdrop-blur-sm z-10">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+      )}
+      <iframe
+        ref={iframeRef}
+        src={url}
+        title={`${title} Preview`}
+        className={`w-full h-full border-0 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          border: 'none',
+          transform: 'scale(1)'
+        }}
+      />
+    </div>
+  );
+}
 
 export function ProjectsSection() {
   return (
@@ -47,16 +116,21 @@ export function ProjectsSection() {
               }`}
               data-testid={`card-project-${index}`}
             >
-              <div className="relative aspect-video overflow-hidden bg-muted">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
+              <div className="relative aspect-video overflow-hidden bg-muted/50 border-b border-border/50">
+                {project.isPreview ? (
+                  <ProjectIframe 
+                    url={project.liveDemoUrl || ''} 
+                    title={project.title} 
+                  />
+                ) : (
+                  <img
+                    src={dashboardImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                )}
                 {project.featured && (
-                  <Badge
-                    className="absolute top-4 right-4 bg-primary text-primary-foreground"
-                  >
+                  <Badge className="absolute top-4 right-4 bg-primary/90 text-primary-foreground backdrop-blur-sm">
                     Featured
                   </Badge>
                 )}
