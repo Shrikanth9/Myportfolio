@@ -218,7 +218,7 @@ This project is open source and available for personal use.
 **Shrikantha M A**
 - Phone: +91 9353889753
 - Location: Bangalore, India
-- Portfolio: [Your live URL]
+- Portfolio: [[Portfolio](https://shrikantha-ma.vercel.app/)]
 
 ## 🙏 Acknowledgments
 
