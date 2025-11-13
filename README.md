@@ -134,7 +134,7 @@ Edit the following files to customize with your own information:
 
 5. **Projects** - `client/src/components/ProjectsSection.tsx`
    - Update the `projects` array with your projects
-   - Replace project images in `attached_assets/`
+   - Replace project images in `assets/`
 
 6. **Contact** - `client/src/components/ContactSection.tsx`
    - Email, phone, location
@@ -142,7 +142,7 @@ Edit the following files to customize with your own information:
 
 ### Update Images
 
-Replace images in `attached_assets/generated_images/` with your own:
+Replace images in `assets/` with your own:
 - Hero background image
 - Profile photo
 - Project screenshots
