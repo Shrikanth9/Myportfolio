@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing professional experience, skill
 
 ## 🚀 Live Demo
 
-Visit the live portfolio at: [Your deployed URL will be here]
+Visit the live portfolio at: [[Portfolio](https://shrikantha-ma.vercel.app/)]
 
 ## ✨ Features
 
