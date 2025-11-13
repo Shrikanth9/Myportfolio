@@ -171,12 +171,6 @@ npm run preview      # Preview production build
 
 ## 🌐 Deployment
 
-### Deploy to Replit
-
-1. Click the **Publish** button in your Replit workspace
-2. Choose deployment type (Static for best performance)
-3. Your portfolio will be live at `your-app.replit.app`
-
 ### Deploy to Vercel
 
 1. Install Vercel CLI:
